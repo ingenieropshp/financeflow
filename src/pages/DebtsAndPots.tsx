@@ -71,7 +71,7 @@ export default function DebtsAndPots() {
                     </div>
                   </div>
 
-                  <p className="num text-2xl font-display font-extrabold text-paper-100 mt-2">{formatCurrency(debt.total_balance)}</p>
+                  <p className="num text-2xl font-display font-extrabold text-paper-100 mt-2 break-words">{formatCurrency(debt.total_balance)}</p>
                   <div className="grid grid-cols-2 gap-3 mt-3 text-sm">
                     <div>
                       <p className="text-[11px] text-paper-500">Pago mínimo</p>
@@ -127,7 +127,7 @@ export default function DebtsAndPots() {
                       className="icon-btn hover:!text-loss" title="Eliminar"
                     ><TrashIcon /></button>
                   </div>
-                  <p className="num text-2xl font-display font-extrabold text-gain mt-2">{formatCurrency(pot.current_amount)}</p>
+                  <p className="num text-2xl font-display font-extrabold text-gain mt-2 break-words">{formatCurrency(pot.current_amount)}</p>
                   <p className="text-xs text-paper-500">de {formatCurrency(pot.target_amount)} objetivo</p>
                   <div className="mt-3">
                     <ProgressBar percent={percent} />

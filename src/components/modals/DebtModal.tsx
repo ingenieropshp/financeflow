@@ -63,12 +63,12 @@ export default function DebtModal({ open, onClose, editing }: DebtModalProps) {
         </div>
         <div>
           <label className="label-field">Saldo pendiente</label>
-          <input className="input-field num" type="number" min="0" step="0.01" value={balance} onChange={(e) => setBalance(e.target.value)} placeholder="0.00" />
+          <input className="input-field num" type="number" min="0" step="50" value={balance} onChange={(e) => setBalance(e.target.value)} placeholder="0" />
         </div>
         <div className="grid grid-cols-2 gap-3">
           <div>
             <label className="label-field">Pago mínimo mensual</label>
-            <input className="input-field num" type="number" min="0" step="0.01" value={minPayment} onChange={(e) => setMinPayment(e.target.value)} placeholder="0.00" />
+            <input className="input-field num" type="number" min="0" step="50" value={minPayment} onChange={(e) => setMinPayment(e.target.value)} placeholder="0" />
           </div>
           <div>
             <label className="label-field">Tasa de interés (%)</label>

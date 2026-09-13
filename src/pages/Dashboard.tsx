@@ -126,7 +126,16 @@ export default function Dashboard() {
               <BarChart data={series} barGap={4}>
                 <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.06)" vertical={false} />
                 <XAxis dataKey="label" stroke="#94A3B8" fontSize={12} tickLine={false} axisLine={false} />
-                <YAxis stroke="#94A3B8" fontSize={12} tickLine={false} axisLine={false} width={40} tickFormatter={(v) => `$${v}`} />
+                <YAxis
+                  stroke="#94A3B8"
+                  fontSize={12}
+                  tickLine={false}
+                  axisLine={false}
+                  width={52}
+                  tickFormatter={(v) =>
+                    new Intl.NumberFormat('es-CO', { notation: 'compact', compactDisplay: 'short' }).format(v)
+                  }
+                />
                 <Tooltip
                   contentStyle={{ background: '#161F2E', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 8, fontSize: 12 }}
                   formatter={(v: number) => formatCurrency(v)}
@@ -158,7 +167,11 @@ function KpiCard({ label, value, tone, emphasize }: { label: string; value: stri
   return (
     <div className={`card p-4 sm:p-5 ${emphasize ? 'ring-1 ring-white/[0.08]' : ''}`}>
       <p className="text-xs font-medium text-paper-500">{label}</p>
-      <p className={`num mt-2 font-display font-extrabold ${emphasize ? 'text-2xl sm:text-3xl' : 'text-xl sm:text-2xl'} ${toneColor}`}>
+      <p
+        className={`num mt-2 font-display font-extrabold break-words ${
+          emphasize ? 'text-xl sm:text-3xl' : 'text-lg sm:text-2xl'
+        } ${toneColor}`}
+      >
         {value}
       </p>
     </div>

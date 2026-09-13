@@ -34,7 +34,7 @@ export default function PotModal({ open, onClose }: { open: boolean; onClose: ()
         </div>
         <div>
           <label className="label-field">Monto objetivo</label>
-          <input className="input-field num" type="number" min="0" step="0.01" value={target} onChange={(e) => setTarget(e.target.value)} placeholder="0.00" />
+          <input className="input-field num" type="number" min="0" step="1000" value={target} onChange={(e) => setTarget(e.target.value)} placeholder="0" />
         </div>
         {error && <p className="text-sm text-loss">{error}</p>}
         <div className="flex gap-3 pt-2">

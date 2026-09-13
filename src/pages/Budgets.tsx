@@ -99,7 +99,7 @@ function CategoryRow({
         </div>
       </div>
 
-      <div className="mt-3 grid grid-cols-3 gap-3 text-sm">
+      <div className="mt-3 grid grid-cols-3 gap-2 sm:gap-3 text-sm">
         <Stat label="Planificado" value={formatCurrency(node.monthly_budget)} />
         <Stat label="Ejecutado" value={formatCurrency(node.spent)} />
         <Stat label="Restante" value={formatCurrency(node.remaining)} negative={node.remaining < 0} />
@@ -119,9 +119,11 @@ function CategoryRow({
 
 function Stat({ label, value, negative }: { label: string; value: string; negative?: boolean }) {
   return (
-    <div>
-      <p className="text-[11px] text-paper-500">{label}</p>
-      <p className={`num font-semibold ${negative ? 'text-loss' : 'text-paper-100'}`}>{value}</p>
+    <div className="min-w-0">
+      <p className="text-[11px] text-paper-500 truncate">{label}</p>
+      <p className={`num font-semibold truncate ${negative ? 'text-loss' : 'text-paper-100'}`} title={value}>
+        {value}
+      </p>
     </div>
   )
 }

@@ -74,10 +74,10 @@ export default function CategoryModal({ open, onClose, editing, parentOptions, d
             className="input-field"
             type="number"
             min="0"
-            step="0.01"
+            step="1000"
             value={budget}
             onChange={(e) => setBudget(e.target.value)}
-            placeholder="0.00"
+            placeholder="0"
           />
         </div>
 

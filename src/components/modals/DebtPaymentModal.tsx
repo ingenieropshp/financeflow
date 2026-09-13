@@ -34,7 +34,7 @@ export default function DebtPaymentModal({ open, onClose, debt }: { open: boolea
         <p className="text-sm text-paper-500">Saldo pendiente actual: <span className="num text-paper-100 font-semibold">{formatCurrency(debt.total_balance)}</span></p>
         <div>
           <label className="label-field">Monto del pago</label>
-          <input className="input-field num" type="number" min="0" step="0.01" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="0.00" autoFocus />
+          <input className="input-field num" type="number" min="0" step="50" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="0" autoFocus />
         </div>
         {error && <p className="text-sm text-loss">{error}</p>}
         <div className="flex gap-3 pt-2">

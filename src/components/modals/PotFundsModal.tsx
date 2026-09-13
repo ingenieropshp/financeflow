@@ -44,7 +44,7 @@ export default function PotFundsModal({ open, onClose, pot, mode }: PotFundsModa
         </p>
         <div>
           <label className="label-field">Monto a {mode === 'add' ? 'añadir' : 'retirar'}</label>
-          <input className="input-field num" type="number" min="0" step="0.01" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="0.00" autoFocus />
+          <input className="input-field num" type="number" min="0" step="50" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="0" autoFocus />
         </div>
         {mode === 'add' && (
           <p className="text-xs text-paper-500">Este monto se descontará de tu saldo disponible como un aporte a la meta.</p>
