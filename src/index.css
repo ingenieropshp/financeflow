@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root {
+    height: 100%;
+  }
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+  ::selection {
+    background: #10B98133;
+  }
+  input, select, textarea {
+    background-color: transparent;
+  }
+  :focus-visible {
+    outline: 2px solid #6366F1;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .num {
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.01em;
+  }
+  .card {
+    @apply bg-ink-800 border border-white/[0.06] rounded-lg;
+  }
+  .input-field {
+    @apply w-full rounded-sm border border-white/10 bg-ink-900 px-3 py-2.5 text-sm text-paper-100 placeholder:text-paper-500 focus:border-accent transition-colors;
+  }
+  .label-field {
+    @apply block text-xs font-medium text-paper-500 mb-1.5;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-sm bg-gain px-4 py-2.5 text-sm font-semibold text-ink-950 hover:bg-emerald-400 transition-colors disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-sm border border-white/10 bg-transparent px-4 py-2.5 text-sm font-medium text-paper-100 hover:bg-white/5 transition-colors;
+  }
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 rounded-sm bg-loss/10 border border-loss/30 px-4 py-2.5 text-sm font-medium text-loss hover:bg-loss/20 transition-colors;
+  }
+  .icon-btn {
+    @apply inline-flex h-8 w-8 items-center justify-center rounded-sm text-paper-500 hover:text-paper-100 hover:bg-white/5 transition-colors;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
