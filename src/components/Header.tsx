@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
+import Logo from './Logo'
 
 const TABS = [
   { to: '/', label: 'Resumen', icon: IconGrid },
@@ -16,17 +17,7 @@ export default function Header() {
       <header className="sticky top-0 z-30 border-b border-white/[0.06] bg-ink-900/95 backdrop-blur">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="flex h-16 items-center justify-between">
-            <div className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-sm bg-gain/10 text-gain">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
-                  <path d="M3 17l6-6 4 4 8-8" strokeLinecap="round" strokeLinejoin="round" />
-                  <path d="M14 7h7v7" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </div>
-              <span className="font-display text-lg font-extrabold tracking-tight text-paper-100">
-                FinanceFlow
-              </span>
-            </div>
+            <Logo size={32} />
 
             <nav className="hidden md:flex items-center gap-1">
               {TABS.map((tab) => (
