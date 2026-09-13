@@ -108,7 +108,7 @@ export default function Transactions() {
                   <th className="px-4 py-3 font-medium">Fecha</th>
                   <th className="px-4 py-3 font-medium">Categoría</th>
                   <th className="px-4 py-3 font-medium hidden sm:table-cell">Método</th>
-                  <th className="px-4 py-3 font-medium hidden md:table-cell">Notas</th>
+                  <th className="px-4 py-3 font-medium">Notas</th>
                   <th className="px-4 py-3 font-medium text-right">Monto</th>
                   <th className="px-4 py-3 font-medium text-right">Acciones</th>
                 </tr>
@@ -119,7 +119,7 @@ export default function Transactions() {
                     <td className="px-4 py-3 text-paper-300 whitespace-nowrap">{formatDate(t.date)}</td>
                     <td className="px-4 py-3 text-paper-100">{categoryName(t.category_id)}</td>
                     <td className="px-4 py-3 text-paper-300 hidden sm:table-cell">{PAYMENT_LABELS[t.payment_method]}</td>
-                    <td className="px-4 py-3 text-paper-500 hidden md:table-cell max-w-[220px] truncate">{t.notes || '—'}</td>
+                    <td className="px-4 py-3 text-paper-500 max-w-[160px] truncate">{t.notes || '—'}</td>
                     <td className={`px-4 py-3 text-right num font-semibold whitespace-nowrap ${t.type === 'income' ? 'text-gain' : 'text-loss'}`}>
                       {t.type === 'income' ? '+' : '-'}{formatCurrency(t.amount)}
                     </td>
